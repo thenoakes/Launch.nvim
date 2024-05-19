@@ -7,8 +7,16 @@ function M.config()
             q = {"<cmd>qa<CR>", "Quit"}
         },
         h = {"<cmd>nohlsearch<CR>", "NOHL"},
-        [";"] = {"<cmd>tabnew | terminal<CR>", "Term"},
+        [";"] = {
+            h = {"<M-1>", "Horizontal terminal"},
+            v = {"<M-2>", "Vertical terminal"},
+            f = {"<M-3>", "Floating terminal"}
+        },
         v = {"<cmd>vsplit<CR>", "Split"},
+        b = {
+          name = "Buffer",
+          d = {"<cmd>bd<CR>", "Delete buffer"}
+        },
         d = {
             name = "Debug"
         },

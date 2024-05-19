@@ -13,6 +13,16 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- windows
+keymap("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
+keymap("n", "<leader>w-", "<C-W>s", { desc = "Split Window Below", remap = true })
+keymap("n", "<leader>w|", "<C-W>v", { desc = "Split Window Right", remap = true })
+keymap("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
+keymap("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap = true })
+
+-- tabs
+keymap("n", "<leader>ad", "<cmd>tabclose<cr>", { desc = "Close Tab" })
+
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
 keymap("n", "*", "*zz", opts)
@@ -28,6 +38,12 @@ keymap("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
 keymap("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
 keymap("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 
+-- better up/down
+keymap({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
+keymap({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
+keymap({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
+keymap({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
+
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
@@ -39,16 +55,9 @@ vim.cmd [[:amenu 10.110 mousemenu.References <cmd>lua vim.lsp.buf.references()<C
 -- vim.cmd [[:amenu 10.120 mousemenu.-sep- *]]
 
 vim.keymap.set("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
-vim.keymap.set("n", "<Tab>", "<cmd>:popup mousemenu<CR>")
 
 -- more good
 keymap({ "n", "o", "x" }, "<s-h>", "^", opts)
 keymap({ "n", "o", "x" }, "<s-l>", "g_", opts)
-
--- tailwind bearable to work with
-keymap({ "n", "x" }, "j", "gj", opts)
-keymap({ "n", "x" }, "k", "gk", opts)
-keymap("n", "<leader>w", ":lua vim.wo.wrap = not vim.wo.wrap<CR>", opts)
-
 
 vim.api.nvim_set_keymap('t', '<C-;>', '<C-\\><C-n>', opts)

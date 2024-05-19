@@ -6,15 +6,16 @@ local M = {
 function M.config()
   local wk = require "which-key"
   wk.register {
-    ["<leader>,"] = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
-    ["<leader>fb"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    ["<leader>fc"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-    ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Find files" },
-    ["<leader>fp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-    ["<leader>ft"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+    ["<leader>,"] = { "<cmd>Telescope buffers previewer=false<cr>", "Find buffer" },
+    ["<leader>b,"] = { "<cmd>Telescope buffers previewer=false<cr>", "Find buffer" },
+    ["<leader>g,"] = { "<cmd>Telescope git_branches<cr>", "Find branch" },
+    ["<leader><leader>"] = { "<cmd>Telescope find_files<cr>", "Find files" },
+    ["<leader>fp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Find project" },
+    ["<leader>/"] = { "<cmd>Telescope live_grep<cr>", "Find text" },
+    ["<leader>ft"] = { "<cmd>Telescope live_grep<cr>", "Find text" },
     ["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "Help" },
-    ["<leader>fl"] = { "<cmd>Telescope resume<cr>", "Last Search" },
-    ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
+    ["<leader>fR"] = { "<cmd>Telescope resume<cr>", "Resume" },
+    ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Find recent File" },
   }
 
   local icons = require "user.icons"
