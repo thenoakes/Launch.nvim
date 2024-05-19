@@ -55,12 +55,12 @@ function M.config()
     ["<leader>cr"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
   }
 
-  wk.register {
-    ["<leader>ca"] = {
-      name = "Code",
-      a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action", mode = "v" },
-    },
-  }
+  -- wk.register {
+  --   ["<leader>ca"] = {
+  --     name = "Code",
+  --     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action", mode = "v" },
+  --   },
+  -- }
 
   local lspconfig = require "lspconfig"
   local icons = require "user.icons"
