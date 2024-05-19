@@ -1,4 +1,7 @@
-local M = {"folke/which-key.nvim"}
+local M = {
+    "folke/which-key.nvim",
+    dependencies = {"afreakk/unimpaired-which-key.nvim"}
+}
 
 function M.config()
     local mappings = {
@@ -15,8 +18,8 @@ function M.config()
         },
         v = {"<cmd>vsplit<CR>", "Split"},
         b = {
-          name = "Buffer",
-          d = {"<cmd>bd<CR>", "Delete buffer"}
+            name = "Buffer",
+            d = {"<cmd>bd<CR>", "Delete buffer"}
         },
         d = {
             name = "Debug"
@@ -67,7 +70,7 @@ function M.config()
                 operators = true,
                 motions = true,
                 text_objects = true,
-                windows = false,
+                windows = true,
                 nav = true,
                 z = true,
                 g = true
@@ -85,7 +88,7 @@ function M.config()
             buftypes = {},
             filetypes = {"TelescopePrompt"}
         },
-        triggers = "auto",
+        triggers = "auto"
     }
 
     local opts = {
@@ -94,6 +97,11 @@ function M.config()
     }
 
     which_key.register(mappings, opts)
+
+    local uwk = require("unimpaired-which-key")
+    which_key.register(uwk.normal_mode)
+    which_key.register(uwk.normal_and_visual_mode, { mode = { "n", "v" } })
+
 end
 
 return M
