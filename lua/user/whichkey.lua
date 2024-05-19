@@ -8,9 +8,10 @@ function M.config()
         },
         h = {"<cmd>nohlsearch<CR>", "NOHL"},
         [";"] = {
-            h = {"<M-1>", "Horizontal terminal"},
-            v = {"<M-2>", "Vertical terminal"},
-            f = {"<M-3>", "Floating terminal"}
+            h = {"<cmd>ToggleTerm direction=horizontal<CR>", "Horizontal terminal"},
+            v = {"<cmd>ToggleTerm direction=vertical<CR>", "Vertical terminal"},
+            f = {"<cmd>ToggleTerm direction=float<CR>", "Floating terminal"},
+            [";"] = {"<cmd>ToggleTerm direction=tab<CR>", "Terminal tab"}
         },
         v = {"<cmd>vsplit<CR>", "Split"},
         b = {
