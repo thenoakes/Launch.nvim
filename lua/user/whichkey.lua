@@ -27,8 +27,8 @@ function M.config()
         g = {
             name = "Git"
         },
-        l = {
-            name = "LSP"
+        c = {
+            name = "Code"
         },
         t = {
             name = "Test"
