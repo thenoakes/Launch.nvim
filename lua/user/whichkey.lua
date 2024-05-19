@@ -64,13 +64,13 @@ function M.config()
                 suggestions = 20
             },
             presets = {
-                operators = false,
-                motions = false,
-                text_objects = false,
+                operators = true,
+                motions = true,
+                text_objects = true,
                 windows = false,
-                nav = false,
-                z = false,
-                g = false
+                nav = true,
+                z = true,
+                g = true
             }
         },
         window = {
@@ -84,7 +84,8 @@ function M.config()
         disable = {
             buftypes = {},
             filetypes = {"TelescopePrompt"}
-        }
+        },
+        triggers = "auto",
     }
 
     local opts = {
