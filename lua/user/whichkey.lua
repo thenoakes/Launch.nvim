@@ -100,7 +100,9 @@ function M.config()
 
     local uwk = require("unimpaired-which-key")
     which_key.register(uwk.normal_mode)
-    which_key.register(uwk.normal_and_visual_mode, { mode = { "n", "v" } })
+    which_key.register(uwk.normal_and_visual_mode, {
+        mode = {"n", "v"}
+    })
 
 end
 

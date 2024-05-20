@@ -38,6 +38,10 @@ keymap("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
 keymap("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
 keymap("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 
+-- diagnostics
+keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", { desc = "Prev Diagnostic" })
+keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Next Diagnostic" })
+
 -- better up/down
 keymap({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 keymap({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
