@@ -8,9 +8,10 @@ local M = {
 function M.config()
   require('catppuccin').setup({
     transparent_background = true,
+    default_integrations = true,
   })
 
-  vim.cmd.colorscheme "catppuccin-frappe"
+  vim.cmd.colorscheme "catppuccin"
 end
 
 return M
